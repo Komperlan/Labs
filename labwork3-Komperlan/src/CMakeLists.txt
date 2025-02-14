@@ -1,0 +1,1 @@
+add_library(main main.h bmp.h Sanbox.h)

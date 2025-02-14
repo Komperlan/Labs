@@ -1,0 +1,12 @@
+
+#include <lib/number.h>
+#include <iostream>
+
+int main() {
+
+    int2023_t value = from_string("33128754287272355555555555555555555555555555555555555555555555555555555421343136178");
+    int2023_t value2 = from_string("2243235232436247877777777777777777777777777777777777713421545123421451267834");
+    std::cout<<(value2 + value);
+    //value2 = value(2);
+    return 0;
+}

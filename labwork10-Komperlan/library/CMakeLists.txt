@@ -1,0 +1,1 @@
+add_library(TTaskSheduler TTaskSheduler.h TTaskSheduler.cpp)

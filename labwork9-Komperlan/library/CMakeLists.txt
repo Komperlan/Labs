@@ -1,0 +1,1 @@
+add_library(MyRange MyRanges.h MyRanges.cpp wrapper.h)
