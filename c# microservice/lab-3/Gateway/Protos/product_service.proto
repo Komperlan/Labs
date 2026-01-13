@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+import "common.proto";
+
+option csharp_namespace = "Itmo.CSharpMicroservices.Lab3.Grpc";
+
+package product_service;
+
+service GrpcProductService {
+  rpc CreateProduct(CreateProductRequest) returns (ProductResponse);
+
+  rpc GetProduct(GetProductRequest) returns (ProductResponse);
+}
+
+message CreateProductRequest {
+  string name = 1;
+  common.DecimalValue price = 2;
+}
+
+message GetProductRequest {
+  int64 product_id = 1;
+}
+
+message ProductResponse {
+  int64 product_id = 1;
+  string name = 2;
+  common.DecimalValue price = 3;
+  bool is_deleted = 4;
+}
+

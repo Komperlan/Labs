@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+    <PropertyGroup>
+      <TargetFramework>net9.0</TargetFramework>
+      <RootNamespace>Itmo.CSharpMicroservices.Lab3.Application</RootNamespace>
+      <OutputType>Library</OutputType>
+    </PropertyGroup>
+    <ItemGroup>
+      <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" />
+      <PackageReference Include="FluentMigrator" />
+      <PackageReference Include="FluentMigrator.Runner" />
+      <ProjectReference Include="..\Core\Core.csproj" />
+      <PackageReference Include="Microsoft.AspNetCore" />
+      <ProjectReference Include="..\Persistance\Persistance.csproj" />
+      <PackageReference Include="Microsoft.Extensions.DependencyInjection" />
+      <PackageReference Include="Npgsql" />
+    </ItemGroup>
+</Project>

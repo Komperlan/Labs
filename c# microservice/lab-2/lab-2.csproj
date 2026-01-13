@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+      <RootNamespace>Itmo.CSharpMicroservices.Lab2</RootNamespace>
+      <OutputType>Library</OutputType>
+    </PropertyGroup>
+    <ItemGroup>
+      <PackageReference Include="FluentMigrator" />
+      <PackageReference Include="FluentMigrator.Runner" />
+      <PackageReference Include="Itmo.Dev.Platform.Common" />
+      <PackageReference Include="Microsoft.Extensions.DependencyInjection" />
+      <PackageReference Include="Microsoft.Extensions.Http" />
+      <PackageReference Include="Moq" />
+      <PackageReference Include="Refit" />
+      <PackageReference Include="Spectre.Console" />
+      <PackageReference Include="Spectre.Console.ImageSharp" />
+      <PackageReference Include="System.Linq.Async" />
+    </ItemGroup>
+</Project>

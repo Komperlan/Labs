@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+      <TargetFramework>net9.0</TargetFramework>
+      <RootNamespace>Itmo.CSharpMicroservices.Lab4.Core</RootNamespace>
+      <OutputType>Library</OutputType>
+    </PropertyGroup>
+    <ItemGroup>
+      <PackageReference Include="Itmo.Dev.Platform.Common" />
+      <PackageReference Include="Itmo.Dev.Platform.Locking" />
+      <PackageReference Include="Microsoft.AspNetCore" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore" />
+      <PackageReference Include="Microsoft.Extensions.DependencyInjection" />
+      <PackageReference Include="Microsoft.Extensions.Http" />
+      <PackageReference Include="Microsoft.Extensions.Options" />
+      <PackageReference Include="Npgsql" />
+      <PackageReference Include="System.Linq.Async" />
+      <ProjectReference Include="..\Kafka\kafka.csproj" />
+      <PackageReference Include="Confluent.Kafka" />
+      <Protobuf Include="..\Kafka\Protos\order_creation.proto" />
+      <Protobuf Include="..\Kafka\Protos\order_processing.proto" />
+      <PackageReference Include="Google.Protobuf" />
+      <PackageReference Include="Grpc.Tools" PrivateAssets="All" />
+    </ItemGroup>
+</Project>

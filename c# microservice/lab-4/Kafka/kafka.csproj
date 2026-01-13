@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>Itmo.CSharpMicroservices.Lab4.Kafka;</RootNamespace>
+    <OutputType>Library</OutputType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Confluent.Kafka" />
+    <Protobuf Include="Protos\order_creation.proto" />
+    <Protobuf Include="Protos\order_processing.proto" />
+    <PackageReference Include="Google.Protobuf" />
+  </ItemGroup>
+</Project>

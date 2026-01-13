@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+      <RootNamespace>Itmo.CSharpMicroservices.Lab1</RootNamespace>
+    </PropertyGroup>
+    <ItemGroup>
+      <PackageReference Include="Itmo.Dev.Platform.Common" />
+      <PackageReference Include="System.Linq.Async" />
+    </ItemGroup>
+    <PropertyGroup>
+        <IsPackable>false</IsPackable>
+    </PropertyGroup>
+</Project>
