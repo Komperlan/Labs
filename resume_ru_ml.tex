@@ -1,0 +1,257 @@
+\documentclass[10pt, letterpaper]{article}
+
+\usepackage[
+    ignoreheadfoot,
+    top=2 cm,
+    bottom=2 cm,
+    left=2 cm,
+    right=2 cm,
+    footskip=1.0 cm,
+]{geometry}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian,english]{babel}
+\usepackage{array}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{primaryColor}{RGB}{0, 0, 0}
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage{amsmath}
+\usepackage[
+    pdftitle={Andrey Myuziev Resume},
+    pdfauthor={Andrey Myuziev},
+    pdfcreator={LaTeX with RenderCV},
+    colorlinks=true,
+    urlcolor=primaryColor
+]{hyperref}
+\usepackage[pscoord]{eso-pic}
+\usepackage{calc}
+\usepackage{bookmark}
+\usepackage{lastpage}
+\usepackage{changepage}
+\usepackage{paracol}
+\usepackage{ifthen}
+\usepackage{needspace}
+\usepackage{iftex}
+
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    \usepackage{lmodern}
+\fi
+
+\raggedright
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt}
+\pagestyle{empty}
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlength{\topskip}{0pt}
+\setlength{\columnsep}{0.15cm}
+\pagenumbering{gobble}
+
+\titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
+
+\titlespacing{\section}{
+    -1pt
+}{
+    0.3 cm
+}{
+    0.2 cm
+}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$}
+
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=0 cm + 10pt
+    ]
+}{
+    \end{itemize}
+}
+
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{
+        0 cm + 0.00001 cm
+    }{
+        0 cm + 0.00001 cm
+    }
+}{
+    \end{adjustwidth}
+}
+
+\newenvironment{twocolentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 4.5 cm}
+    \begin{paracol}{2}
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+}
+
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.5}
+}{
+    \par\kern\topsep
+}
+
+\let\hrefWithoutArrow\href
+
+\begin{document}
+    \newcommand{\AND}{\unskip
+        \cleaders\copy\ANDbox\hskip\wd\ANDbox
+        \ignorespaces
+    }
+
+    \newsavebox\ANDbox
+    \sbox\ANDbox{$|$}
+
+    \begin{header}
+        \fontsize{25 pt}{25 pt}\selectfont Андрей Мюзиев
+
+        \vspace{5 pt}
+
+        \normalsize
+        \mbox{Санкт-Петербург}%
+        \kern 5.0 pt%
+        \AND%
+        \kern 5.0 pt%
+        \mbox{\hrefWithoutArrow{mailto:andrej.myuziev@yandex.ru}{andrej.myuziev@yandex.ru}}%
+        \kern 5.0 pt%
+        \AND%
+        \kern 5.0 pt%
+        \mbox{\hrefWithoutArrow{tel:+79210144773}{+7 921 014 47 73}}%
+        \kern 5.0 pt%
+        \AND%
+        \kern 5.0 pt%
+        \mbox{\hrefWithoutArrow{https://github.com/Komperlan}{github.com/Komperlan}}%
+    \end{header}
+
+    \vspace{5 pt - 0.3 cm}
+
+    \section{Профиль}
+
+        \begin{onecolentry}
+            Студент направления программной инженерии в ИТМО. Интересуюсь backend-разработкой и машинным обучением: проектировал микросервисные приложения на C\# и Java, собирал датасеты, обучал модели регрессии, кластеризации, аудио-классификации и генерации изображений.
+        \end{onecolentry}
+
+    \section{Образование}
+
+        \begin{twocolentry}{
+            сентябрь 2023 -- май 2027
+        }
+            \textbf{Университет ИТМО}, бакалавриат, программная инженерия
+        \end{twocolentry}
+
+    \section{Проекты}
+
+        \begin{twocolentry}{
+            \href{https://github.com/Komperlan/Labs/tree/main/ml/4-audio-Komperlan-main}{код}
+        }
+            \textbf{Классификация персонажей Dota 2 по голосовым репликам}
+        \end{twocolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Собрал датасет из 1668 MP3-файлов для пяти персонажей, написал Selenium-парсер Dota 2 Fandom и подготовил mel-спектрограммы через librosa.
+                \item Реализовал собственные LSTMCell и многослойный LSTM-классификатор на PyTorch; получил точность на тестовой выборке 0.9281 и визуализировал LSTM-эмбеддинги через t-SNE.
+                \item Технологии: Python, PyTorch, librosa, scikit-learn, Selenium, BeautifulSoup, NumPy, Matplotlib.
+            \end{highlights}
+        \end{onecolentry}
+
+        \vspace{0.2 cm}
+
+        \begin{twocolentry}{
+            \href{https://github.com/Komperlan/Labs/tree/main/ml/5-generative-Komperlan-main}{код}
+        }
+            \textbf{Генерация изображений с помощью вариационного автоэнкодера}
+        \end{twocolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Обучил сверточный VAE для двух датасетов: 1554 иконки и 5813 anime-изображений, приводя изображения к 64x64 и работая с латентными пространствами размерности 512 и 256.
+                \item Реализовал генерацию из случайного шума, восстановление изображений и GIF-интерполяции между объектами в латентном пространстве; ошибка на валидации для эксперимента с иконками снизилась до 0.0404.
+                \item Технологии: Python, PyTorch, TorchVision, Torch DirectML, Pillow, imageio, NumPy, Matplotlib.
+            \end{highlights}
+        \end{onecolentry}
+
+        \vspace{0.2 cm}
+
+        \begin{twocolentry}{
+            \href{https://github.com/Komperlan/Labs/tree/main/ml}{код}
+        }
+            \textbf{ML-пайплайн для анализа автомобильных объявлений Auto.ru}
+        \end{twocolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Написал парсер Auto.ru, подготовил CSV с характеристиками автомобилей и построил пайплайн предобработки: очистка признаков, удаление выбросов, one-hot-кодирование и стандартизация.
+                \item Для предсказания цены сравнил базовую модель, HistGradientBoostingRegressor и собственный градиентный бустинг; лучшая sklearn-модель получила RMSE на тесте 1 002 487 и R2 0.704.
+                \item Для кластеризации сравнил базовое разбиение по цене, sklearn K-Means и собственный K-Means; собственная реализация достигла Silhouette Score 0.2148.
+                \item Технологии: Python, pandas, NumPy, scikit-learn, BeautifulSoup, requests, Matplotlib.
+            \end{highlights}
+        \end{onecolentry}
+
+        \vspace{0.2 cm}
+
+        \begin{twocolentry}{
+            \href{https://github.com/Komperlan/Labs/blob/main/c\%23\%20microservice/lab-3/lab-3.md}{код}
+        }
+            \textbf{C\# веб-приложение с гексагональной архитектурой}
+        \end{twocolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Разработал микросервисную систему с изолированной бизнес-логикой, gRPC API, HTTP-шлюзом, хранением данных в PostgreSQL, аудитом операций и транзакционным сервисным слоем.
+                \item Реализовал репозитории с пагинацией и фильтрацией, middleware для обработки ошибок, серверные interceptors и полиморфные модели через Protocol Buffers oneof.
+                \item Технологии: ASP.NET Core, C\#, gRPC, PostgreSQL, Npgsql, FluentMigrator, Swagger.
+            \end{highlights}
+        \end{onecolentry}
+
+        \vspace{0.2 cm}
+
+        \begin{twocolentry}{
+            \href{https://github.com/Komperlan/Labs/blob/main/Java/Lab4/lab-4.md}{код}
+        }
+            \textbf{Java веб-приложение на Spring Boot}
+        \end{twocolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Разработал Spring Boot приложение с REST API поверх существующей PostgreSQL базы через Spring Data JPA и Hibernate.
+                \item Добавил аутентификацию и правила авторизации: владельцы и администраторы могут изменять данные, все авторизованные пользователи могут читать.
+                \item Технологии: Java, Spring Boot, Spring Data JPA, Hibernate, PostgreSQL, SQL, Gradle.
+            \end{highlights}
+        \end{onecolentry}
+
+    \section{Технологии}
+
+        \begin{onecolentry}
+            \textbf{Языки:} Python, C++, Java, C\#, SQL, Protobuf
+        \end{onecolentry}
+
+        \vspace{0.2 cm}
+
+        \begin{onecolentry}
+            \textbf{ML и данные:} PyTorch, scikit-learn, pandas, NumPy, librosa, Matplotlib, BeautifulSoup, Selenium
+        \end{onecolentry}
+
+        \vspace{0.2 cm}
+
+        \begin{onecolentry}
+            \textbf{Backend:} Spring, PostgreSQL, Linux, Docker, .NET, Gradle, gRPC, HTTP, Hibernate
+        \end{onecolentry}
+
+\end{document}

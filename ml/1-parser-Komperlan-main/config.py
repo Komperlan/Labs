@@ -1,0 +1,1 @@
+MAIN_PAGE_URL = "https://auto.ru/sankt-peterburg/cars/all/?engine_group=DIESEL&engine_group=GASOLINE&page={}"
